@@ -1,13 +1,19 @@
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Headers from './components/Header';
-import Card from './components/Card';
-import './App.css';
+import Annonces from './pages/Annonces';
+import Details from './pages/Details';
 
 function App() {
   return (
     <div className="App">
-     <Headers></Headers>
-     <Card></Card>
+      <Router>
+        <Headers />
+        <Routes>
+          <Route path="/details" element={<Details />} />
+          <Route path="/" element={<Annonces />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

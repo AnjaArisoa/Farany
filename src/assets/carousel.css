@@ -1,0 +1,23 @@
+/* carousel.css */
+
+.left-button, .right-button {
+    position: absolute;
+    top: 50%;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    background: #dcdcdc; /* Slightly darker gray */
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* Add z-index */
+}
+
+  
+  .left-button {
+    left: 0;
+  }
+  
+  .right-button {
+    right: 0;
+  }
+  

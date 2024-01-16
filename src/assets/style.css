@@ -1,0 +1,17 @@
+/* styles.css */
+.button-favorite {
+    background: linear-gradient(90deg, gray, #cccccc);
+    width: 320px;
+  
+  }
+  .container{
+    margin-top: 20px;
+    border-right: 1px solid lightgray;
+    
+    
+  }
+  .container-divider {
+    border-bottom: 1px solid lightgray;
+    
+    padding: 20px;
+  }
