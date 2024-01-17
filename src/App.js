@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Headers from './components/Header';
 import Annonces from './pages/Annonces';
 import Details from './pages/Details';
+import Favories from './pages/Favories';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/details" element={<Details />} />
           <Route path="/" element={<Annonces />} />
+          <Route path="/favories" element={<Favories />} />
         </Routes>
       </Router>
     </div>

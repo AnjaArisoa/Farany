@@ -7,6 +7,7 @@ import Button from '@mui/joy/Button';
 import { Container } from '@mui/material';
 import { GoChevronRight } from "react-icons/go";
 import  "../assets/style.css";
+import { useNavigate } from 'react-router-dom';
 
 function Search(){
     const [age, setAge] = React.useState('');
@@ -14,11 +15,17 @@ function Search(){
     const handleChange = (event) => {
       setAge(event.target.value);
     };
+    const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate('/favories');
+  };
     return(
         <Container className='container'>
         <Button
           endDecorator={<GoChevronRight />}
           className='button-favorite'
+          onClick={handleCardClick}
         >
           Favorites
         </Button>
