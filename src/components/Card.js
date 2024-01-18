@@ -15,7 +15,6 @@ export default function MediaControlCard() {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    // Navigate to the Details page when the card is clicked
     navigate('/details');
   };
   const [isFilled, setIsFilled] = useState(false);
@@ -41,8 +40,6 @@ export default function MediaControlCard() {
       <Box sx={{ display: 'flex-end',marginLeft:'400px',width:'100px' }}>
         <Box
         sx={{
-          borderRadius: '50%',
-          backgroundColor: isFilled ? 'red' : 'primary.main',
           padding: '10px',
           marginRight: '50px',
           marginTop: '20px',
@@ -51,7 +48,7 @@ export default function MediaControlCard() {
         }}
         onClick={handleClick}
       >
-        {isFilled ? <IoMdHeart size='30px' /> : <IoMdHeartEmpty size='30px' />}
+        {isFilled ? <IoMdHeart size='30px' color='red' /> : <IoMdHeartEmpty size='30px' />}
       </Box>
         <Typography variant="subtitle1" color="text.secondary" component="div" sx={{    marginRight: '50px', marginTop: '100px',height:'30px' }}>
             200$

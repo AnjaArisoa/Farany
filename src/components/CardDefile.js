@@ -9,8 +9,14 @@ import Carousel  from './Carousel';
 import image1 from '../assets/1.jpg';
 import image2 from '../assets/2.jpg';
 import image3 from '../assets/3.jpg';
+import { useNavigate } from 'react-router-dom';
 
 export default function UserCard() {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate('/login');
+  };
     const images = [image1, image2, image3];
   return (
     <Box
@@ -69,7 +75,7 @@ export default function UserCard() {
             </div>
           </Sheet>
           <Box sx={{ display: 'flex', gap: 1.5, '& > button': { flex: 1 } }}>
-            <Button variant="outlined" color="neutral">
+            <Button variant="outlined" color="neutral" onClick={handleCardClick}>
               Contactez-nous
             </Button>
             <Button variant="solid" color="primary">

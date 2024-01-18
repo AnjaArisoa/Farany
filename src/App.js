@@ -4,6 +4,7 @@ import Headers from './components/Header';
 import Annonces from './pages/Annonces';
 import Details from './pages/Details';
 import Favories from './pages/Favories';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/details" element={<Details />} />
           <Route path="/" element={<Annonces />} />
           <Route path="/favories" element={<Favories />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>
