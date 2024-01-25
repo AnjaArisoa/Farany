@@ -5,6 +5,7 @@ import Annonces from './pages/Annonces';
 import Details from './pages/Details';
 import Favories from './pages/Favories';
 import Login from './pages/Login';
+import Historique from './pages/Historique';
 
 function App() {
   return (

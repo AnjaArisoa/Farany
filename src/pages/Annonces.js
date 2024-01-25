@@ -1,17 +1,39 @@
 import Card from '../components/Card';
 import { Grid } from '@mui/material';
 import Search from '../components/Search';
+import Filter from '../components/Filter';
+import RentalCard from '../components/NewCard';
+import Stack from '@mui/joy/Stack';
+import { annonces } from '../services';
+import { useEffect, useState } from 'react';
 function Annonces(){
+  const [data, setData] = useState([]);
+
+    useEffect(() => {
+      annonces().then((resp) => {
+        console.log(resp.data);
+        setData(resp.data)
+    
+      }).catch((error) => {
+        console.log("kfdkjkfdjkfdjkfj");
+        console.log(error.data);
+      })
+    }, []);
+
     return(
-    <Grid container spacing={2} >
-    <Grid item xs={3}>
-      <Search></Search>
-    </Grid>
-    <Grid item xs={9}>
-      <Card></Card>
-    </Grid>
-  </Grid>
+      <Stack style={{ paddingX: { xs: 2, md: 4 }, paddingTop: 2, minHeight: 0 }}>
+      <Filter />
+      <Stack style={{ overflow: 'auto', spacing: 2 }}>
+      {
+  data != null ? data.map((e) => {
+    return(
+      <RentalCard item={e}></RentalCard>
+    )
+  }) : ""
+}
+        
+      </Stack>
+    </Stack>
     );
-  
 }
 export default Annonces
