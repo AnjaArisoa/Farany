@@ -6,7 +6,6 @@ import CardOverflow from '@mui/joy/CardOverflow';
 import Link from '@mui/joy/Link';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
-import { useNavigate } from 'react-router-dom';
 import { IoMdHeart } from 'react-icons/io';
 import IconButton from '@mui/joy/IconButton';
 

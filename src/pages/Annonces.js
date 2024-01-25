@@ -1,6 +1,4 @@
-import Card from '../components/Card';
-import { Grid } from '@mui/material';
-import Search from '../components/Search';
+
 import Filter from '../components/Filter';
 import RentalCard from '../components/NewCard';
 import Stack from '@mui/joy/Stack';
