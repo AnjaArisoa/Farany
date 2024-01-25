@@ -1,6 +1,7 @@
 
 import Filter from '../components/Filter';
 import RentalCard from '../components/NewCard';
+import Grid from '@mui/joy/Grid';
 import Stack from '@mui/joy/Stack';
 import { annonces } from '../services';
 import { useEffect, useState } from 'react';
@@ -21,16 +22,20 @@ function Annonces(){
     return(
       <Stack style={{ paddingX: { xs: 2, md: 4 }, paddingTop: 2, minHeight: 0 }}>
       <Filter />
-      <Stack style={{ overflow: 'auto', spacing: 2 }}>
-      {
-  data != null ? data.map((e) => {
-    return(
-      <RentalCard item={e}></RentalCard>
-    )
-  }) : ""
-}
-        
-      </Stack>
+
+<Grid container spacing={2}>
+  {data != null
+    ? data.map((e) => (
+        <Grid key={e.id} item xs={12} sm={6} md={6} lg={6}>
+          <RentalCard item={e} />
+        </Grid>
+      ))
+    : ""}
+</Grid>
+
+
+
+
     </Stack>
     );
 }
