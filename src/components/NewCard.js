@@ -3,7 +3,7 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import CardOverflow from '@mui/joy/CardOverflow';
-import Link from '@mui/joy/Link';
+import { Link } from 'react-router-dom';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
 import { IoMdHeart } from 'react-icons/io';
@@ -17,8 +17,8 @@ const RentalCard = ({item}) => {
   
 
   return (
+    <Link to="/details" style={{textDecoration: 'none'}}>
     <Card
-      
       orientation="horizontal"
       sx={{
         bgcolor: 'neutral.softBg',
@@ -28,10 +28,8 @@ const RentalCard = ({item}) => {
           boxShadow: 'lg',
           borderColor: 'var(--joy-palette-neutral-outlinedDisabledBorder)',
         },
-        width:'80%',
-        margin:'10px'
-   
-       
+        width:'94%',
+        margin:'5px 2px'
       }}
     >
       <CardOverflow
@@ -63,17 +61,11 @@ const RentalCard = ({item}) => {
           alignItems="flex-start"
         >
           <div>
-            <Typography level="body-sm">{item.detailAnnonce.categorie}</Typography>
             <Typography level="title-md">
-              <Link
-                overlay
-                underline="none"
-                href="/details"
-                sx={{ color: 'text.primary' }}
-              >
+              
                 {item.detailAnnonce.titre_voiture}
-              </Link>
             </Typography>
+            <Typography level="body-sm">{item.detailAnnonce.categorie}</Typography>
           </div>
           <IconButton
             variant="plain"
@@ -106,8 +98,8 @@ const RentalCard = ({item}) => {
           </Typography>
         </Stack>
       </CardContent>
-      
     </Card>
+      </Link>
   );
 };
 

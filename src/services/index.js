@@ -10,3 +10,6 @@ export async function annonces(){
         return axiosInstance.get("https://rest-production-e2d3.up.railway.app/annonces");
     }
 }
+export async function favoris(){
+
+}

@@ -10,11 +10,8 @@ function Annonces(){
 
     useEffect(() => {
       annonces().then((resp) => {
-        console.log(resp.data);
-        setData(resp.data)
-    
+        setData(resp.data)    
       }).catch((error) => {
-        console.log("kfdkjkfdjkfdjkfj");
         console.log(error.data);
       })
     }, []);
@@ -23,7 +20,7 @@ function Annonces(){
       <Stack style={{ paddingX: { xs: 2, md: 4 }, paddingTop: 2, minHeight: 0 }}>
       <Filter />
 
-<Grid container spacing={2}>
+<Grid container spacing={1}>
   {data != null
     ? data.map((e) => (
         <Grid key={e.id} item xs={12} sm={6} md={6} lg={6}>
