@@ -12,12 +12,12 @@ import Slider, { sliderClasses } from '@mui/joy/Slider';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Checkbox from '@mui/joy/Checkbox';
-import { FiFilter } from "react-icons/fi";
+import { FiFilter,FiSearch } from "react-icons/fi";
 
 
 
 function valueText(value) {
-  return `$${value.toLocaleString('en-US')}`;
+  return `${value.toLocaleString('en-US')} MGA`;
 }
 
 export default function Filters() {
@@ -31,17 +31,22 @@ export default function Filters() {
       justifyContent={{ xs: 'space-between' }}
       flexWrap="wrap"
       sx={{ minWidth: 0 }}
-    >
-      <Button
-        variant="outlined"
-        color="neutral"
-        onClick={() => setOpen(true)}
-        sx={{width:"200px",margin:'10px'}}
       >
-        <FiFilter  size={20}/>
-        Filters
-      </Button>
-      
+      <Stack direction="row" alignItems="center" gap={2} sx={{
+        padding: '8px'
+      }}>
+        <Button
+          variant="outlined"
+          color="neutral"
+          onClick={() => setOpen(true)}
+          sx={{width:"120px"}}
+          >
+          <FiFilter size={15} style={{margin: '0 10px'}}/>
+          Filtrer
+        </Button>
+        <Input placeholder='Rechercher ici ...'/>
+        <Button><FiSearch size={20}/></Button>
+      </Stack>
       <Drawer open={open} onClose={() => setOpen(false)}>
         <Stack useFlexGap spacing={3} sx={{ p: 2 }}>
           <DialogTitle>Recherche</DialogTitle>
